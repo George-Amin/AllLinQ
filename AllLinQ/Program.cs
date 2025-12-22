@@ -21,21 +21,52 @@
 
             #region Query Syntax
 
-         /*   var Result = from nums in Numbers
-                        where nums % 2 == 0
-                        select nums;
-*/
+            /*   var Result = from nums in Numbers
+                           where nums % 2 == 0
+                           select nums;
+   */
 
-           
+
 
             #endregion
 
-/*
-            foreach (var item in Result)
+            /*
+                        foreach (var item in Result)
+                        {
+                            Console.WriteLine(item);
+                        }
+            */
+            #endregion
+
+
+            #region Exections ways [ Deferred Execution - Immediate Execution ]
+            #region Deferred Execution
+            //// Deferred Execution the operator will execute when calling
+            /*        var GetOddNums = Numbers.Where(nums => nums % 2 == 1);
+                    Numbers.AddRange(new int[] { 11, 12, 13, 14, 15 });
+
+                    foreach (int num in GetOddNums) 
+                    {
+                        Console.WriteLine(num);
+                    }*/
+            #endregion
+
+            #region Immediate Execution
+
+            //// use casting operator or aggregate or elemenet
+            
+            var GetOddNums = Numbers.Where(nums => nums % 2 == 1).ToList();
+
+            Numbers.AddRange(new int[] { 11, 12, 13, 14, 15 });
+
+            foreach (int num in GetOddNums)
             {
-                Console.WriteLine(item);
+                Console.WriteLine(num);
             }
-*/
+
+
+            #endregion
+
             #endregion
         }
     }
