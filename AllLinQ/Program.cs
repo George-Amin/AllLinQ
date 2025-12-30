@@ -218,15 +218,67 @@ namespace AllLinQ
 
             #endregion
 
-
-     
-
-            //Console.WriteLine(Result);
-
-            foreach (var i in Result)
+            #region Part 11 Element Operators - Immediate Execution - valid only with fluent syntax
+            List<Product> EmptyProducts = new List<Product>()
             {
-                Console.WriteLine(i);
-            }
+
+
+            };
+            #region Fluent Syntax
+            #region First()
+            //// like top in SQl
+            //var Result = EmptyProducts.First();
+            /*Unhandled exception. System.InvalidOperationException: Sequence contains no elements*/
+
+            //// may throw exception if the collection is empty 
+            //var Result = ProductList.First();
+            #endregion
+            #region Last()
+            //// may throw exception if the collection is empty 
+            //Result = ProductList.Last();// get the last element in the collection
+            //// if null
+            //var Result = ProductList.Last(p=>p.ProductName == "AA");
+            //// if not found the condition will return exception
+
+            /*Unhandled exception. System.InvalidOperationException: Sequence contains no matching element*/
+            //Console.WriteLine(Result?.ProductName ?? "Not Found"); // not working here
+
+            #endregion
+
+            #region FirstOrDefault()
+            //// if the collection is empty will return the default value dataType    
+            //var Result = EmptyProducts.FirstOrDefault();
+            //// if not found the condition will return default value dataType
+            //var Result = ProductList.FirstOrDefault(p => p.ProductName == "AA");
+            //Console.WriteLine(Result?.ProductName ?? "Not Found"); // will work here (OrDefault)
+            #endregion
+            #endregion
+
+            #region Query syntax
+            /*
+             first() , last() , firstOrDefault()  , LastOrDefault() not valid with query syntax
+            //// use Hybrid Syntax
+             */
+            #endregion
+            #region Hybrid Syntax - Query Expression
+            var Result = (from p in ProductList
+                          where p.UnitsInStock == 0
+                          select new
+                          {
+                                p.ProductID,
+                                p.ProductName
+                          }).FirstOrDefault();//// Hybrid Syntax
+            #endregion
+            #endregion
+
+            ///Console.WriteLine(Result?.ProductName ?? "Not Found");
+
+            Console.WriteLine(Result);
+
+            //foreach (var i in Result)
+            //{
+            //    Console.WriteLine(i);
+            //}
 
         }
     }
