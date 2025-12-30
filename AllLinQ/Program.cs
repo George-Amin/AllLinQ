@@ -9,6 +9,7 @@ namespace AllLinQ
     {
         static void Main(string[] args)
         {
+            #region Session 01
             //List<int> Numbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
             #region LINQ Syntax [fluent , query] Syntax
             #region fluent Syntax
@@ -330,7 +331,8 @@ namespace AllLinQ
             //foreach (var i in Result)
             //{
             //    Console.WriteLine(i);
-            //}
+            //} 
+            #endregion
 
         }
     }
