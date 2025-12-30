@@ -1,4 +1,5 @@
 ﻿using AllLinQ.Data;
+using System.Net.Http.Headers;
 using System.Runtime.CompilerServices;
 using static AllLinQ.ListGenerator;
 
@@ -261,19 +262,70 @@ namespace AllLinQ
              */
             #endregion
             #region Hybrid Syntax - Query Expression
-            var Result = (from p in ProductList
-                          where p.UnitsInStock == 0
-                          select new
-                          {
-                                p.ProductID,
-                                p.ProductName
-                          }).FirstOrDefault();//// Hybrid Syntax
+            /*
+              var Result = (from p in ProductList
+                            where p.UnitsInStock == 0
+                            select new
+                            {
+                                  p.ProductID,
+                                  p.ProductName
+                            }).FirstOrDefault();//// Hybrid Syntax
+  */
             #endregion
+            #endregion
+
+
+            #region Part 12 Aggregate Operators - Immediate Execution
+            /*
+             Count() , Sum() , Min() , Max() , Average()
+            */
+            #region Count()
+            //var Result = ProductList.Count();
+            //Console.WriteLine(Result);
+            //// overload with condition take Func<Product , bool>
+            //Result = ProductList.Count(p => p.UnitsInStock == 0);
+            //Console.WriteLine( Result); 
+            #endregion
+            #region Max() - min()
+            //// condition on what need get the maximum value
+            /*
+             should implement interface ICompareble<> .
+             */
+
+            /*Unhandled exception. System.ArgumentException: At least one object must implement IComparable.*/
+            //var Result = ProductList.Max();
+
+            //// after implement ICompareble<> in Product class
+
+            //var Result = ProductList.Max();
+            //var Result = ProductList.Min();
+
+            //var Result = ProductList.Max(p => p.UnitPrice);
+
+            //Console.WriteLine(Result);
+            #endregion
+
+            #region Sum()
+            //var Result = ProductList.Sum(p => p.UnitsInStock);
+            //Console.WriteLine(Result);
+            #endregion
+            #region Average()
+
+            //var Result = ProductList.Average(p => p.UnitPrice); 
+            //Console.WriteLine(Result);
+            #endregion
+
+
+
+            //string[] Name = new string[] { "AA" , "BB" ,"CC","DD" };
+
+            //var Result = Name.Aggregate((str1, str2) => $"{str1}-{str2}");
+            //Console.WriteLine(Result);
             #endregion
 
             ///Console.WriteLine(Result?.ProductName ?? "Not Found");
 
-            Console.WriteLine(Result);
+            //Console.WriteLine(Result);
 
             //foreach (var i in Result)
             //{
