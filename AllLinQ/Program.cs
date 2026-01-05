@@ -381,20 +381,40 @@ namespace AllLinQ
             #endregion
 
             #region OfType()
-/*
-            ArrayList obj = new ArrayList()
-            {
-                "AA","BB","CC",1,2,3,4
-            };
-            //var Result = obj.OfType<int>();
-            var Result = obj.OfType<string>();
-            foreach (var item in Result)
-            {
+            /*
+                        ArrayList obj = new ArrayList()
+                        {
+                            "AA","BB","CC",1,2,3,4
+                        };
+                        //var Result = obj.OfType<int>();
+                        var Result = obj.OfType<string>();
+                        foreach (var item in Result)
+                        {
 
-                Console.WriteLine(item);
-            }
-*/
+                            Console.WriteLine(item);
+                        }
+            */
             #endregion
+            #endregion
+
+
+            #region Part 02 Generation Operators
+            //// deferred execution
+            //// valid only with fluent syntax 
+            //// Generation Operators
+            ///
+            /*
+                        var Result = Enumerable.Range(0, 10); //// 0 to 9 
+                        foreach(var Items in Result) Console.Write(Items + " ");
+            */
+
+/*
+            var Name = Enumerable.Repeat("A", 10);//// return IEnumerable repeat "A" 10 times
+            foreach (var Items in Name) Console.Write(Items + " ");
+            */
+            
+            
+            
             #endregion
 
 
