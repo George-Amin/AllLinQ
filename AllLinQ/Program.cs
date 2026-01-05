@@ -1,4 +1,5 @@
 ﻿using AllLinQ.Data;
+using System.Collections;
 using System.Net.Http.Headers;
 using System.Runtime.CompilerServices;
 using static AllLinQ.ListGenerator;
@@ -332,6 +333,72 @@ namespace AllLinQ
             //{
             //    Console.WriteLine(i);
             //} 
+            #endregion
+
+            #region  Session 02
+
+
+            #region Part 01 Casting Operators - Immediate Execution
+            //// Both .ToList() and .ToArray() always return a new instance of a collection. 
+            #region ToList()
+
+            //// need casting operators when dealing with different data types
+            //// take the elements from collection and return  it as new list List<T>
+            //List<Product> products = ProductList.Where(p => p.UnitsInStock == 0).ToList();
+            //foreach (var item in products)
+            //{
+            //    Console.WriteLine(item);   
+            //}
+
+            #endregion
+            #region ToArray()
+            //Product[] products = ProductList.Where(p => p.UnitsInStock == 0).ToArray();
+            //foreach (var item in products)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            #endregion
+
+            #region ToDictionary()
+            /*
+              Dictionary<long , Product> keyValuePairsProduct = ProductList.Where(p=>p.UnitsInStock == 0)
+                                                                             .ToDictionary(p=>p.ProductID); *//*select the key*//*
+
+                foreach (var item in keyValuePairsProduct)
+                {
+                    Console.WriteLine($"Key {item.Key} Value {item.Value}");
+                }
+                */
+            /*
+                        Dictionary<long , string> keyValuePairsProductIdAndNameIsValue = ProductList.Where(p=>p.UnitsInStock==0)
+                            .ToDictionary(p=>p.ProductID , p=>p.ProductName);
+                        foreach (var item in keyValuePairsProductIdAndNameIsValue)
+                        {
+                            Console.WriteLine($"Key {item.Key} Value {item.Value}");
+                        }
+            */
+            #endregion
+
+            #region OfType()
+/*
+            ArrayList obj = new ArrayList()
+            {
+                "AA","BB","CC",1,2,3,4
+            };
+            //var Result = obj.OfType<int>();
+            var Result = obj.OfType<string>();
+            foreach (var item in Result)
+            {
+
+                Console.WriteLine(item);
+            }
+*/
+            #endregion
+            #endregion
+
+
+
             #endregion
 
         }
