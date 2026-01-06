@@ -478,10 +478,10 @@ namespace AllLinQ
             #endregion
 
             #region Except()
-/*
- return the elements is not exist in seq1 and seq2 
- 
- */
+            /*
+             return the elements is not exist in seq1 and seq2 
+
+             */
             //var Result = Seq1.Except(Seq2);    
             #endregion
 
@@ -493,6 +493,41 @@ namespace AllLinQ
 
             #endregion
 
+
+            #region Part 04 Quantifier Operators - Return Boolean
+
+            #region Any()
+
+            /*
+             if the seq has one element will return true 
+             */
+            /*will return true cuz the seq has element*/
+            //bool Result = ProductList.Any();
+
+            /*with condition*/
+            //bool Result = ProductList.Any(p => p.UnitsInStock > 1000); ///.. false there is no any product unitsInStock > 1000    
+            #endregion
+            
+            
+            #region All()
+            /*
+             if all elements has the same condition will return true 
+             */
+            /*           
+             *           var Result1 = ProductList.Any(p=>p.ProductID == 1);
+                        Console.WriteLine(Result1);
+            */
+            //var Result = ProductList.All(p => p.ProductID == 1);
+
+            #endregion
+
+
+
+            //Console.WriteLine(Result);
+
+
+
+            #endregion
             #endregion
 
         }
