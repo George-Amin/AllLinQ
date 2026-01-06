@@ -408,16 +408,90 @@ namespace AllLinQ
                         foreach(var Items in Result) Console.Write(Items + " ");
             */
 
-/*
-            var Name = Enumerable.Repeat("A", 10);//// return IEnumerable repeat "A" 10 times
-            foreach (var Items in Name) Console.Write(Items + " ");
+            /*
+                        var Name = Enumerable.Repeat("A", 10);//// return IEnumerable repeat "A" 10 times
+                        foreach (var Items in Name) Console.Write(Items + " ");
+                        */
+
+
+
+            #endregion
+
+            #region Part 03 Set Operators
+
+            var Seq1 = Enumerable.Range(0, 100); //// 0 - 99
+            var Seq2 = Enumerable.Range(50, 100); //// 50 - 149
+            #region Union()
+            /*
+             return the items in two seq without duplication
+             */
+            /*
+                        var Result = Seq1.Union(Seq2);
+
+
+                        foreach (var item in Seq1)
+                        {
+                            Console.Write(item + " ");
+                        }
+                        Console.WriteLine("\n---------------------------------------");
+                        foreach (var item in Seq2)
+                        {
+                            Console.Write(item + " ");
+                        }
+                        Console.WriteLine("\n---------------------------------------");
+
+                        foreach (var item in Result)
+                        {
+                            Console.Write(item + " ");
+                        }
+
             */
-            
-            
-            
+            #endregion
+
+            #region Concat()
+            /*
+             return the itmes with duplications
+            like UnionAll
+             */
+            //var Result = Seq1.Concat(Seq2);
+            #endregion
+
+            #region Dictinct()
+
+            /*
+             remove the duplication from seq
+             */
+
+            //var Result = Seq1.Concat(Seq2);
+
+            //Result = Result.Distinct();
+            #endregion
+
+            #region Intersect()
+
+            /*
+             return elements in seq1 and seq2
+             */
+
+
+            //var Result  = Seq1.Intersect(Seq2);
+            #endregion
+
+            #region Except()
+/*
+ return the elements is not exist in seq1 and seq2 
+ 
+ */
+            //var Result = Seq1.Except(Seq2);    
             #endregion
 
 
+            //foreach (var item in Result)
+            //{
+            //    Console.Write(item + " ");
+            //}
+
+            #endregion
 
             #endregion
 
