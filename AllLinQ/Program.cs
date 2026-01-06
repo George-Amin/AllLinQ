@@ -552,10 +552,90 @@ namespace AllLinQ
             //{
             //    Console.WriteLine(item);
 
-             
+
             //}
             #endregion
 
+            #region Part 06 Grouping Operators
+            /*
+            1.Get Products Grouped by Category
+            Get Products in Stock Grouped by Category
+            Get Products in Stock Grouped by Category That Contains More Than 10 Product
+            Get Category Name of Products in Stock That Contains More Than 10 Product and Number of Product In Each Category
+
+             */
+
+            #region Query syntax
+            //var Result = from pro in ProductList
+            //             group pro by pro.Category;
+
+
+            //var Result = from pro in ProductList
+            //             where pro.UnitsInStock > 0
+            //             group pro by pro.UnitsInStock;
+            /*
+                        //// EX 3  Get Products in Stock Grouped by Category That Contains More Than 10 Product
+
+                        var Result = from pro in ProductList
+                                     where pro.UnitsInStock > 0
+                                     group pro by pro.Category
+                                     into Category
+                                     where Category.Count() > 10
+                                     select Category;
+                        */
+
+            //// EX4 Get Products in Stock Grouped by Category That Contains More Than 10 Product
+/*
+            var Result = from pro in ProductList
+                         where pro.UnitsInStock > 0
+                         group pro by pro.Category
+                                     into Category
+                         where Category.Count() > 10
+                         select new
+                         {
+                             CategoryName = Category.Key, Count = Category.Count()
+                         };
+*/
+            #endregion
+
+            #region Fluent syntax
+            // var Result = ProductList.GroupBy(p => p.Category);
+            //var Result = ProductList.Where(p => p.UnitsInStock > 0)
+            //     .GroupBy(p => p.Category);
+
+
+            //// EX 3  Get Products in Stock Grouped by Category That Contains More Than 10 Product
+            /*
+                        var Result = ProductList.Where(p => p.UnitsInStock > 0)
+                            .GroupBy(p => p.Category).Where(p => p.Count() > 10);
+            */
+
+
+            //// EX 4  Get Products in Stock Grouped by Category That Contains More Than 10 Product
+
+            /*
+                    var Result = ProductList.Where(p => p.UnitsInStock > 0)
+                        .GroupBy(p => p.Category).Where(p => p.Count() > 10).Select(x=>new {
+                            CategoryName = x.Key, Count = x.Count()
+                        });
+*/
+     /*       foreach (var item in Result)
+            {
+                Console.WriteLine(item);
+            }*/
+            #endregion
+            //foreach (var Category in Result)
+            //{
+            //    Console.WriteLine(Category.Key); //// the is Category name 
+            //    foreach (var product in Category)
+            //    {
+            //        Console.WriteLine($"            {product.ProductName}");
+            //    }
+
+            //}
+
+
+            #endregion
             #endregion
 
         }
