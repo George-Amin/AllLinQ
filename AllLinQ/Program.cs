@@ -1,6 +1,7 @@
 ﻿using AllLinQ.Data;
 using System.Collections;
 using System.Net.Http.Headers;
+using System.Reflection.Metadata.Ecma335;
 using System.Runtime.CompilerServices;
 using static AllLinQ.ListGenerator;
 
@@ -507,8 +508,8 @@ namespace AllLinQ
             /*with condition*/
             //bool Result = ProductList.Any(p => p.UnitsInStock > 1000); ///.. false there is no any product unitsInStock > 1000    
             #endregion
-            
-            
+
+
             #region All()
             /*
              if all elements has the same condition will return true 
@@ -528,6 +529,33 @@ namespace AllLinQ
 
 
             #endregion
+
+            #region Part 05 Zip Operator
+
+            //string[] Names =
+            //{
+
+            //    "AA", "BB" , "CC"
+            //};
+
+            //int[] Nums = Enumerable.Range(0, 5).ToArray();
+            //char[] chars = { 'a', 'b', 'c', 'd', 'e' };
+            ////var Result = Names.Zip(Nums); 
+            ///*
+            //     (AA, 0)
+            //    (BB, 1)
+            //    (CC, 2)
+            //*/
+            //var Result = Names.Zip(Nums,(Names , Nums)=> new {Index = Nums , Litera = chars});
+
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+
+             
+            //}
+            #endregion
+
             #endregion
 
         }
