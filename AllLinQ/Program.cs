@@ -585,17 +585,17 @@ namespace AllLinQ
                         */
 
             //// EX4 Get Products in Stock Grouped by Category That Contains More Than 10 Product
-/*
-            var Result = from pro in ProductList
-                         where pro.UnitsInStock > 0
-                         group pro by pro.Category
-                                     into Category
-                         where Category.Count() > 10
-                         select new
-                         {
-                             CategoryName = Category.Key, Count = Category.Count()
-                         };
-*/
+            /*
+                        var Result = from pro in ProductList
+                                     where pro.UnitsInStock > 0
+                                     group pro by pro.Category
+                                                 into Category
+                                     where Category.Count() > 10
+                                     select new
+                                     {
+                                         CategoryName = Category.Key, Count = Category.Count()
+                                     };
+            */
             #endregion
 
             #region Fluent syntax
@@ -619,10 +619,10 @@ namespace AllLinQ
                             CategoryName = x.Key, Count = x.Count()
                         });
 */
-     /*       foreach (var item in Result)
-            {
-                Console.WriteLine(item);
-            }*/
+            /*       foreach (var item in Result)
+                   {
+                       Console.WriteLine(item);
+                   }*/
             #endregion
             //foreach (var Category in Result)
             //{
@@ -634,6 +634,28 @@ namespace AllLinQ
 
             //}
 
+
+            #endregion
+
+
+            #region Part 07 Partitioning Operators
+
+            //// Take()
+            //// will return the first 10 elements
+            ///// var Result = ProductList.Take(10); //// will return the first 10 elements
+
+            //// Take() with condition
+            ////var Result = ProductList.Where(p=>p.UnitsInStock > 0 ).Take(5);
+
+            //// TakeLast();
+            var Result = ProductList.Where(p => p.UnitsInStock > 0).TakeLast(5);
+            
+            
+            foreach (var i in Result)
+            {
+
+            Console.WriteLine(i);
+            }
 
             #endregion
             #endregion
